@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en-IE" data-lens="all">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcos Fernandes · IT support, software and operations · Carlow, Ireland</title>
+<meta name="description" content="Marcos Fernandes: 12+ years across IT support, port operations and software development. BSc Computing Science (2026). Based in Carlow, Ireland, and open to work.">
+<meta property="og:title" content="Marcos Fernandes · From ports to servers, still keeping things running">
+<meta property="og:description" content="IT support, software and operations. 12+ years, BSc Computing Science (2026), based in Carlow, Ireland.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://marcosjfp.github.io/portfolio/">
+<meta property="og:image" content="https://marcosjfp.github.io/portfolio/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3EFE6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2312203A'/%3E%3Cpath d='M7 23V9l9 9 9-9v14' fill='none' stroke='%23F26B3A' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>
+  // Apply the saved theme before first paint.
+  (function () {
+    try {
+      var t = localStorage.getItem('mf-theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F3EFE6;
+    --paper-2: #EAE4D7;
+    --card: #FBF9F4;
+    --ink: #12203A;
+    --ink-2: #44506A;
+    --ink-3: #6B7488;
+    --line: #D5CDBC;
+    --accent: #D9481C;
+    --accent-ink: #B33A14;
+    --sea: #1E6B73;
+    --land: #E2DAC8;
+    --band: #12203A;
+    --band-ink: #F3EFE6;
+    --band-2: #A9B4CB;
+    --shadow: 0 1px 2px rgba(18,32,58,.06), 0 12px 32px -12px rgba(18,32,58,.18);
+    --serif: "Fraunces", Georgia, "Times New Roman", serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --r: 14px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #0C1322; --paper-2: #111A2D; --card: #141E33; --ink: #ECE7DB; --ink-2: #B4BCCD;
+      --ink-3: #8A94A9; --line: #26324B; --accent: #FF7F4D; --accent-ink: #FF9A72; --sea: #63C1C9;
+      --land: #1A2540; --band: #060B16; --band-ink: #ECE7DB; --band-2: #8A94A9;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.6);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #0C1322; --paper-2: #111A2D; --card: #141E33; --ink: #ECE7DB; --ink-2: #B4BCCD;
+    --ink-3: #8A94A9; --line: #26324B; --accent: #FF7F4D; --accent-ink: #FF9A72; --sea: #63C1C9;
+    --land: #1A2540; --band: #060B16; --band-ink: #ECE7DB; --band-2: #8A94A9;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 14px 34px -14px rgba(0,0,0,.6);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font: 400 17px/1.6 var(--sans); -webkit-font-smoothing: antialiased;
+    transition: background-color .3s, color .3s;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0; }
+  ul, ol { list-style: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap { width: min(1180px, 100% - clamp(40px, 9vw, 112px)); margin-inline: auto; }
+  .skip { position: absolute; left: 16px; top: -60px; background: var(--ink); color: var(--paper); padding: 10px 16px; border-radius: 8px; z-index: 100; }
+  .skip:focus { top: 12px; }
+
+  .mono { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+
+  /* ---------- nav ---------- */
+  .nav { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--paper) 86%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .2s, background-color .3s; }
+  .nav.scrolled { border-bottom-color: var(--line); }
+  .nav .wrap { display: flex; align-items: center; gap: 24px; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-weight: 600; letter-spacing: -.01em; }
+  .brand svg { width: 30px; height: 30px; flex: none; }
+  .nav nav { margin-left: auto; display: flex; gap: 4px; }
+  .nav nav a { text-decoration: none; padding: 10px 14px; font-size: 15px; color: var(--ink-2); border-radius: 8px; transition: color .15s, background-color .15s; }
+  .nav nav a:hover { color: var(--ink); background: var(--paper-2); }
+  .icon-btn { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line); background: none; color: var(--ink); border-radius: 50%; cursor: pointer; transition: transform .15s, border-color .15s; }
+  .icon-btn:hover { border-color: var(--ink-3); transform: rotate(18deg); }
+  .icon-btn svg { width: 18px; height: 18px; }
+  .icon-btn .moon { display: none; }
+  :root[data-theme="dark"] .icon-btn .moon { display: block; }
+  :root[data-theme="dark"] .icon-btn .sun { display: none; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .icon-btn .moon { display: block; }
+    :root:not([data-theme="light"]) .icon-btn .sun { display: none; }
+  }
+
+  /* ---------- buttons ---------- */
+  .btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font: 600 16px/1 var(--sans); text-decoration: none; border: 1px solid var(--ink); transition: transform .15s, background-color .15s, color .15s, border-color .15s; cursor: pointer; }
+  .btn svg { width: 16px; height: 16px; transition: transform .2s; }
+  .btn:hover svg { transform: translateX(3px); }
+  .btn:active { transform: translateY(1px) scale(.985); }
+  .btn-solid { background: var(--ink); color: var(--paper); }
+  .btn-solid:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn-line { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-line:hover { border-color: var(--ink); }
+  .nav .btn { min-height: 44px; padding: 0 18px; font-size: 15px; }
+
+  /* ---------- hero ---------- */
+  .hero { padding: clamp(36px, 6vw, 72px) 0 clamp(40px, 6vw, 72px); }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .9fr); gap: clamp(32px, 5vw, 72px); align-items: center; }
+  .status { display: inline-flex; align-items: center; gap: 10px; padding: 7px 14px 7px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--ink-2); background: var(--card); }
+  .status i { width: 8px; height: 8px; border-radius: 50%; background: #2E9E5B; box-shadow: 0 0 0 0 rgba(46,158,91,.5); animation: ping 2.4s ease-out infinite; }
+  @keyframes ping { 70% { box-shadow: 0 0 0 9px rgba(46,158,91,0); } 100% { box-shadow: 0 0 0 0 rgba(46,158,91,0); } }
+  h1 { font: 500 clamp(2.7rem, 6.2vw, 5.1rem)/1.0 var(--serif); letter-spacing: -.035em; margin: 26px 0 26px; font-variation-settings: "opsz" 144; text-wrap: balance; }
+  h1 em { font-style: italic; font-weight: 400; color: var(--accent); }
+  .lede { font-size: clamp(1.05rem, 1.5vw, 1.22rem); line-height: 1.55; color: var(--ink-2); max-width: 36em; }
+  .lede strong { color: var(--ink); font-weight: 600; }
+  .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+  .rise { opacity: 0; transform: translateY(14px); animation: rise .7s cubic-bezier(.2,.7,.2,1) forwards; }
+  .rise:nth-child(2) { animation-delay: .08s; } .rise:nth-child(3) { animation-delay: .16s; } .rise:nth-child(4) { animation-delay: .24s; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+
+  /* chart */
+  .chart { position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); padding: 14px 14px 12px; }
+  .chart-head { display: flex; justify-content: space-between; gap: 12px; padding: 2px 4px 10px; }
+  .chart svg { width: 100%; height: auto; display: block; border-radius: 8px; background: color-mix(in srgb, var(--sea) 7%, var(--card)); }
+  .chart .grid line { stroke: var(--line); stroke-width: .6; stroke-dasharray: 2 4; }
+  .chart .land { fill: var(--land); stroke: var(--ink-3); stroke-width: .7; stroke-linejoin: round; }
+  .chart .tick { font: 500 8.5px var(--mono); fill: var(--ink-3); letter-spacing: .04em; }
+  .chart .sea-name { font: italic 400 15px var(--serif); fill: var(--ink-3); letter-spacing: .32em; opacity: .7; }
+  .chart .route { fill: none; stroke: var(--accent); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.5s cubic-bezier(.5,0,.2,1) forwards; }
+  .chart .r1 { animation-delay: .5s; } .chart .r2 { animation-delay: 1.5s; } .chart .r3 { animation-delay: 2.5s; stroke: var(--sea); }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  .chart .port circle { fill: var(--card); stroke: var(--ink); stroke-width: 1.6; }
+  .chart .port .dot { fill: var(--ink); stroke: none; }
+  .chart .port text { font: 600 11px var(--sans); fill: var(--ink); }
+  .chart .port .sub { font: 500 8.5px var(--mono); fill: var(--ink-3); letter-spacing: .04em; }
+  .chart .home circle:first-child { fill: var(--accent); stroke: var(--accent); opacity: .22; animation: beacon 2.6s ease-out infinite; transform-origin: 380px 60px; }
+  @keyframes beacon { from { transform: scale(.5); opacity: .45; } to { transform: scale(2.2); opacity: 0; } }
+  .legs { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; padding: 12px 4px 2px; font-size: 13px; color: var(--ink-2); }
+  .legs b { font: 500 11.5px var(--mono); color: var(--ink); margin-right: 6px; }
+
+  /* ---------- facts strip ---------- */
+  .facts { border-block: 1px solid var(--line); }
+  .facts ul { display: grid; grid-template-columns: repeat(5, 1fr); }
+  .facts li { padding: 22px 20px 22px 0; }
+  .facts li + li { padding-left: 20px; border-left: 1px solid var(--line); }
+  .facts b { display: block; font: 500 clamp(1.5rem, 2.4vw, 2rem)/1.1 var(--serif); letter-spacing: -.02em; }
+  .facts span { display: block; margin-top: 6px; font-size: 14px; line-height: 1.4; color: var(--ink-2); }
+
+  /* ---------- sections ---------- */
+  section { padding: clamp(64px, 9vw, 120px) 0; }
+  .sec-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px clamp(32px, 5vw, 72px); align-items: end; margin-bottom: clamp(32px, 4vw, 56px); }
+  h2 { font: 500 clamp(2rem, 4vw, 3.1rem)/1.05 var(--serif); letter-spacing: -.03em; margin-top: 14px; text-wrap: balance; }
+  .sec-head p.note { color: var(--ink-2); max-width: 34em; }
+
+  /* ---------- lens ---------- */
+  .lens { background: var(--band); color: var(--band-ink); padding: clamp(56px, 7vw, 96px) 0; }
+  .lens .mono { color: var(--band-2); }
+  .lens .wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .lens h2 { color: var(--band-ink); }
+  .lens-pick { display: grid; gap: 8px; margin-top: 28px; }
+  .lens-pick button { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; width: 100%; min-height: 54px; padding: 0 18px; border-radius: 12px; border: 1px solid rgba(255,255,255,.16); background: transparent; color: var(--band-ink); font: 500 16px var(--sans); cursor: pointer; transition: background-color .15s, border-color .15s, transform .15s; }
+  .lens-pick button:hover { border-color: rgba(255,255,255,.4); transform: translateX(3px); }
+  .lens-pick button[aria-pressed="true"] { background: var(--band-ink); color: var(--band); border-color: var(--band-ink); }
+  .lens-pick button span { font: 500 11px var(--mono); letter-spacing: .08em; opacity: .65; text-transform: uppercase; }
+  .pitch { min-height: 14em; }
+  .pitch p { font: 400 clamp(1.35rem, 2.5vw, 2.05rem)/1.32 var(--serif); letter-spacing: -.015em; text-wrap: pretty; }
+  .pitch p[hidden] { display: none; }
+  .pitch p { animation: swap .45s cubic-bezier(.2,.7,.2,1); }
+  @keyframes swap { from { opacity: 0; transform: translateY(8px); } }
+  .pitch mark { background: none; color: #FF8A5C; }
+  .pitch-foot { margin-top: 26px; font-size: 15px; color: var(--band-2); }
+
+  /* lens dimming across the page */
+  [data-lane] { transition: opacity .3s, filter .3s; }
+  html[data-lens="support"] [data-lane]:not([data-lane~="support"]),
+  html[data-lens="build"] [data-lane]:not([data-lane~="build"]),
+  html[data-lens="ops"] [data-lane]:not([data-lane~="ops"]) { opacity: .34; filter: saturate(.4); }
+  html:not([data-lens="all"]) [data-lane]:hover, html:not([data-lens="all"]) [data-lane]:focus-within { opacity: 1; filter: none; }
+
+  .lens-chip { position: fixed; left: 50%; bottom: 18px; translate: -50% 0; z-index: 40; display: none; align-items: center; gap: 10px; padding: 8px 8px 8px 16px; background: var(--ink); color: var(--paper); border-radius: 999px; font-size: 14px; box-shadow: var(--shadow); white-space: nowrap; }
+  html:not([data-lens="all"]) .lens-chip { display: inline-flex; }
+  .lens-chip button { min-height: 32px; padding: 0 12px; border-radius: 999px; border: 0; background: var(--paper); color: var(--ink); font: 600 13px var(--sans); cursor: pointer; }
+
+  /* ---------- work ---------- */
+  .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+  .proj { grid-column: span 6; display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; transition: transform .25s cubic-bezier(.2,.7,.2,1), box-shadow .25s, border-color .25s, opacity .3s, filter .3s; }
+  .proj:hover { transform: translateY(-3px); box-shadow: var(--shadow); border-color: var(--ink-3); }
+  .proj.wide { grid-column: span 12; flex-direction: row; }
+  .proj.wide .shot { flex: 1.25; border-bottom: 0; border-right: 1px solid var(--line); }
+  .proj.wide .body { flex: 1; justify-content: center; }
+  .proj.wide .shot { display: flex; flex-direction: column; }
+  .proj.wide .shot img { flex: 1 1 0; min-height: 0; aspect-ratio: auto; object-position: left top; }
+  .shot { position: relative; background: var(--paper-2); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .shot .bar { display: flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; background: var(--card); border-bottom: 1px solid var(--line); }
+  .shot .bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+  .shot .bar span { margin-left: 10px; font: 400 11px var(--mono); color: var(--ink-3); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .proj:hover .shot img { transform: scale(1.025); }
+  .phones { display: flex; justify-content: center; align-items: flex-end; gap: clamp(10px, 2vw, 22px); padding: 28px 20px 0; aspect-ratio: 16 / 10.6; background: linear-gradient(180deg, #1B2231, #0E131D); }
+  .phones img { width: 27%; aspect-ratio: auto; border-radius: 14px 14px 0 0; border: 3px solid #2B3345; border-bottom: 0; object-fit: cover; object-position: top; align-self: stretch; height: 100%; }
+  .phones img:nth-child(2) { width: 31%; }
+  .proj:hover .phones img { transform: translateY(-6px); }
+  .phones img:nth-child(2) { transition-delay: .05s; } .phones img:nth-child(3) { transition-delay: .1s; }
+
+  .diagram { aspect-ratio: 16 / 10.6; display: grid; place-items: center; padding: 20px; background: var(--paper-2); }
+  .diagram svg { width: 100%; height: 100%; }
+  .diagram .box { fill: var(--card); stroke: var(--ink-3); stroke-width: 1; }
+  .diagram .box.hot { stroke: var(--accent); stroke-width: 1.5; }
+  .diagram text { font: 500 11px var(--mono); fill: var(--ink); text-anchor: middle; }
+  .diagram text.s { font-size: 8.5px; fill: var(--ink-3); letter-spacing: .04em; }
+  .diagram .wire { fill: none; stroke: var(--ink-3); stroke-width: 1; }
+  .diagram .pulse { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-dasharray: .12 .88; animation: flow 3s linear infinite; }
+  .diagram .pulse.b { animation-delay: -1s; } .diagram .pulse.c { animation-delay: -2s; }
+  @keyframes flow { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+  .body { display: flex; flex-direction: column; gap: 14px; padding: clamp(22px, 2.6vw, 34px); flex: 1; }
+  .body .mono { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .live { display: inline-flex; align-items: center; gap: 6px; color: #23804A; }
+  .live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  :root[data-theme="dark"] .live { color: #5FD08D; }
+  h3 { font: 500 clamp(1.45rem, 2.2vw, 1.9rem)/1.15 var(--serif); letter-spacing: -.02em; }
+  .body p { color: var(--ink-2); font-size: 16px; }
+  .body p.mono { font-size: 12px; color: var(--ink-3); }
+  .point { padding-left: 14px; border-left: 2px solid var(--accent); font-size: 15px !important; color: var(--ink) !important; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 6px; }
+  .tags li { font: 400 12px var(--mono); padding: 4px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink-2); }
+  .links { display: flex; flex-wrap: wrap; gap: 4px 22px; }
+  .tl { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; font-size: 15px; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 calc(100% - 10px) / 0 1.5px no-repeat; transition: background-size .25s, color .15s; }
+  .tl:hover { background-size: 100% 1.5px; color: var(--accent-ink); }
+  .tl svg { width: 13px; height: 13px; }
+  .more { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .more .proj { grid-column: auto; }
+  .more .body { gap: 10px; }
+  .more h3 { font-size: 1.3rem; }
+
+  /* ---------- experience ---------- */
+  .xp { background: var(--paper-2); }
+  .roles { border-top: 1px solid var(--line); }
+  .role { display: grid; grid-template-columns: 170px minmax(0, 1fr) minmax(0, 1.25fr); gap: 12px clamp(20px, 3vw, 48px); padding: 30px 0; border-bottom: 1px solid var(--line); position: relative; }
+  .role::before { content: ""; position: absolute; left: 0; top: -1px; width: 0; height: 2px; background: var(--accent); transition: width .4s cubic-bezier(.2,.7,.2,1); }
+  .role:hover::before { width: 100%; }
+  .role time { font: 500 13px/1.5 var(--mono); color: var(--ink-3); padding-top: 5px; }
+  .role h3 { font-size: clamp(1.25rem, 1.9vw, 1.55rem); }
+  .role .org { margin-top: 6px; font-size: 15px; color: var(--ink-2); }
+  .role .lane { display: inline-block; margin-top: 12px; font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent-ink); }
+  .role ul { display: grid; gap: 8px; font-size: 16px; color: var(--ink-2); }
+  .role li { padding-left: 18px; position: relative; }
+  .role li::before { content: ""; position: absolute; left: 0; top: .72em; width: 8px; height: 1.5px; background: var(--ink-3); }
+  .role li strong { color: var(--ink); font-weight: 600; }
+  .earlier { margin-top: 22px; font-size: 15px; color: var(--ink-2); max-width: 62em; }
+
+  /* ---------- toolkit ---------- */
+  .kit { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--card); }
+  .kit > div { padding: clamp(22px, 2.5vw, 32px); border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .kit > div:nth-child(3n) { border-right: 0; }
+  .kit > div:nth-last-child(-n+3) { border-bottom: 0; }
+  .kit h3 { font-size: 1.25rem; margin: 10px 0 16px; }
+  .kit ul { display: flex; flex-wrap: wrap; gap: 7px; }
+  .kit li { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; padding: 5px 11px 5px 9px; border-radius: 999px; background: var(--paper); border: 1px solid var(--line); }
+  .kit li::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ink); flex: none; }
+  .kit li.w::before { background: none; border: 1.5px solid var(--ink-3); }
+  .key { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 18px; font-size: 14px; color: var(--ink-2); }
+  .key span { display: inline-flex; align-items: center; gap: 8px; }
+  .key i { width: 8px; height: 8px; border-radius: 50%; background: var(--ink); }
+  .key i.w { background: none; border: 1.5px solid var(--ink-3); }
+  .edu { background: var(--paper) !important; }
+  .edu dl { display: grid; gap: 14px; }
+  .edu dt { font-weight: 600; font-size: 15px; line-height: 1.35; }
+  .edu dd { font-size: 14px; color: var(--ink-2); margin-top: 2px; }
+
+  /* ---------- about ---------- */
+  .about .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 72px); align-items: start; }
+  .about blockquote { margin: 22px 0 0; font: 400 clamp(1.3rem, 2.2vw, 1.75rem)/1.38 var(--serif); letter-spacing: -.012em; text-wrap: pretty; }
+  .about blockquote + p { margin-top: 20px; color: var(--ink-2); }
+  .notes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .notes li { padding: 22px; border: 1px solid var(--line); border-radius: var(--r); background: var(--card); transition: transform .25s, border-color .25s; }
+  .notes li:hover { transform: translateY(-2px); border-color: var(--ink-3); }
+  .notes b { display: block; font: 500 2rem/1 var(--serif); letter-spacing: -.02em; color: var(--accent); }
+  .notes span { display: block; margin-top: 10px; font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+
+  /* ---------- contact ---------- */
+  .contact { background: var(--band); color: var(--band-ink); padding: clamp(72px, 10vw, 140px) 0 40px; }
+  .contact .mono { color: var(--band-2); }
+  .contact h2 { font-size: clamp(2.6rem, 7vw, 5.6rem); line-height: .98; color: var(--band-ink); max-width: 12em; }
+  .contact h2 em { font-style: italic; font-weight: 400; color: #FF8A5C; }
+  .mail { display: inline-block; margin-top: 36px; font: 500 clamp(1.15rem, 2.6vw, 2rem) var(--sans); letter-spacing: -.01em; text-decoration: none; padding-bottom: 6px; background: linear-gradient(#FF8A5C, #FF8A5C) 0 100% / 100% 2px no-repeat; transition: background-size .3s, color .2s; overflow-wrap: anywhere; }
+  .mail:hover { background-size: 100% 100%; color: #12203A; }
+  .terms { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: clamp(48px, 6vw, 80px); padding-top: 28px; border-top: 1px solid rgba(255,255,255,.16); }
+  .terms dt { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--band-2); }
+  .terms dd { margin-top: 8px; font-size: 15px; line-height: 1.5; }
+  .terms a { text-underline-offset: 3px; }
+  .terms a:hover { color: #FF8A5C; }
+  .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; margin-top: 64px; font-size: 13px; color: var(--band-2); }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 980px) {
+    .hero .wrap, .lens .wrap, .about .wrap, .sec-head { grid-template-columns: 1fr; }
+    .chart { max-width: 480px; }
+    .facts ul { grid-template-columns: repeat(2, 1fr); }
+    .facts li, .facts li + li { padding: 18px 16px 18px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+    .facts li:last-child { grid-column: span 2; border-bottom: 0; }
+    .proj, .proj.wide { grid-column: span 12; flex-direction: column; }
+    .proj.wide .shot { border-right: 0; border-bottom: 1px solid var(--line); }
+    .proj.wide .shot img { flex: none; aspect-ratio: 16 / 10; }
+    .more { grid-template-columns: 1fr; }
+    .role { grid-template-columns: 1fr; gap: 10px; }
+    .kit { grid-template-columns: 1fr 1fr; }
+    .kit > div, .kit > div:nth-child(3n) { border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .kit > div:nth-child(2n) { border-right: 0; }
+    .kit > div:nth-last-child(-n+2) { border-bottom: 0; }
+    .terms { grid-template-columns: 1fr 1fr; }
+    .pitch { min-height: 0; }
+  }
+  @media (max-width: 720px) {
+    .nav nav { display: none; }
+    .nav .icon-btn { margin-left: auto; }
+    .brand span { display: none; }
+  }
+  @media (max-width: 560px) {
+    body { font-size: 16px; }
+    .cta .btn { flex: 1 1 100%; justify-content: center; }
+    .kit { grid-template-columns: 1fr; }
+    .kit > div, .kit > div:nth-child(n) { border-right: 0; border-bottom: 1px solid var(--line); }
+    .kit > div:last-child { border-bottom: 0; }
+    .notes, .terms, .legs { grid-template-columns: 1fr; }
+    .lens-chip { font-size: 13px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .rise { opacity: 1; transform: none; }
+    .chart .route { stroke-dashoffset: 0; }
+    html { scroll-behavior: auto; }
+  }
+  @media print {
+    .nav, .lens-pick, .lens-chip, .icon-btn { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11pt; }
+    section, .lens, .contact { padding: 18pt 0; background: #fff !important; color: #000 !important; }
+    .proj, .role { break-inside: avoid; }
+    .rise { opacity: 1; transform: none; animation: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Marcos Fernandes, back to top">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="var(--ink)"/><path d="M7 23V9l9 9 9-9v14" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Marcos Fernandes</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#work">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#about">About</a>
+    </nav>
+    <button class="icon-btn" id="theme" type="button" aria-label="Switch between light and dark theme">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+    </button>
+    <a class="btn btn-solid" href="#contact">Get in touch</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <p class="status rise"><i aria-hidden="true"></i>Open to work · Carlow, Ireland · can start within a week</p>
+      <h1 class="rise">From ports to servers, <em>still keeping things running.</em></h1>
+      <p class="lede rise">I'm <strong>Marcos Fernandes</strong>. Over twelve years I've run an enterprise service desk queue, kept a 500-bed hospital's IT working around the clock, and supervised tugboat crews across two Brazilian ports. In 2026 I finished a <strong>BSc in Computing Science</strong>, and I now build and ship web applications.</p>
+      <div class="cta rise">
+        <a class="btn btn-solid" href="#work">See the projects <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a class="btn btn-line" href="https://github.com/marcosjfp" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn btn-line" href="https://linkedin.com/in/marcos-fernandes80" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+
+    <figure class="chart rise" aria-label="Map of the Atlantic showing where Marcos has worked: São Luís, Recife and Santos in Brazil, and Dublin and Carlow in Ireland.">
+      <div class="chart-head"><span class="mono">Career chart · 2011 to today</span><span class="mono">2 countries · 5 cities</span></div>
+      <svg viewBox="28 6 408 596" role="img" aria-hidden="true">
+        <g class="grid">
+          <line x1="40" x2="424" y1="110" y2="110"/><line x1="40" x2="424" y1="206" y2="206"/><line x1="40" x2="424" y1="302" y2="302"/><line x1="40" x2="424" y1="398" y2="398"/><line x1="40" x2="424" y1="494" y2="494"/>
+          <line y1="14" y2="590" x1="136" x2="136"/><line y1="14" y2="590" x1="232" x2="232"/><line y1="14" y2="590" x1="328" x2="328"/>
+        </g>
+        <path class="land" d="M40.0 346.8 L59.2 359.6 L91.2 366.0 L97.6 372.4 L104.0 398.0 L116.8 402.5 L140.5 414.0 L158.4 416.6 L177.6 421.7 L198.7 433.2 L201.3 446.0 L200.0 455.6 L187.2 468.4 L177.6 481.2 L174.4 500.4 L169.9 522.8 L166.1 527.9 L161.6 538.8 L147.5 545.2 L127.7 551.6 L113.6 563.1 L113.0 577.2 L104.0 590.0 L40.0 590.0 Z"/>
+        <path class="land" d="M360.0 67.8 L360.0 52.4 L371.5 44.1 L385.6 44.7 L388.2 50.5 L385.0 56.9 L383.7 63.9 L372.8 68.4 Z"/>
+        <path class="land" d="M388.8 78.0 L404.8 74.8 L424.0 72.9 L424.0 23.6 L404.8 23.0 L392.0 26.8 L385.6 36.4 L392.0 46.0 L404.8 52.4 L403.5 56.9 L395.2 56.9 L396.5 65.2 L390.7 67.1 L404.8 69.0 Z"/>
+        <path class="land" d="M424.0 81.2 L414.4 79.9 L393.9 87.6 L411.2 97.2 L416.3 116.4 L412.5 120.2 L366.4 121.5 L363.2 150.3 L366.4 161.2 L385.6 164.4 L385.6 168.9 L361.3 199.6 L340.8 220.7 L315.2 263.6 L312.0 303.9 L328.0 327.6 L340.8 340.4 L372.8 369.8 L398.4 364.7 L424.0 362.8 Z"/>
+        <text class="tick" x="44" y="106">45°N</text><text class="tick" x="44" y="202">30°N</text><text class="tick" x="44" y="298">15°N</text><text class="tick" x="44" y="394">0°</text><text class="tick" x="44" y="490">15°S</text>
+        <text class="tick" x="139" y="24">45°W</text><text class="tick" x="235" y="24">30°W</text><text class="tick" x="331" y="24">15°W</text>
+        <text class="sea-name" x="236" y="256" text-anchor="middle" transform="rotate(-56 236 256)">ATLANTIC</text>
+
+        <path class="route r1" pathLength="1" d="M140.5 414 Q 196 170 379 62"/>
+        <path class="route r2" pathLength="1" d="M379 62 Q 330 300 140.5 414"/>
+        <path class="route r3" pathLength="1" d="M140.5 414 Q 190 424 200.6 449.5 Q 196 520 127.7 551.3"/>
+
+        <g class="port home">
+          <circle cx="380" cy="60" r="9"/><circle cx="380" cy="60" r="5"/><circle class="dot" cx="380" cy="60" r="2"/>
+          <text x="366" y="56" text-anchor="end">Dublin · Carlow</text><text class="sub" x="366" y="68" text-anchor="end">IRELAND · HOME</text>
+        </g>
+        <g class="port"><circle cx="140.5" cy="414" r="4.5"/><text x="130" y="436" text-anchor="end">São Luís</text></g>
+        <g class="port"><circle cx="200.6" cy="449.5" r="4.5"/><text x="210" y="453">Recife</text></g>
+        <g class="port"><circle cx="127.7" cy="551.3" r="4.5"/><text x="138" y="566">Santos</text></g>
+      </svg>
+      <ol class="legs">
+        <li><b>2011</b>Dublin: Microsoft support desk</li>
+        <li><b>2013</b>São Luís: hospital IT</li>
+        <li><b>2014</b>Recife and Santos: port operations</li>
+        <li><b>2023</b>Ireland again: degree, then software</li>
+      </ol>
+    </figure>
+  </div>
+</div>
+
+<!-- ================= FACTS ================= -->
+<div class="facts">
+  <div class="wrap">
+    <ul>
+      <li><b>12+ years</b><span>professional experience in IT and operations</span></li>
+      <li><b>BSc, 2026</b><span>Computing Science, Level 7 NFQ, Dorset College Dublin</span></li>
+      <li><b>3 live apps</b><span>deployed and open for you to try today</span></li>
+      <li><b>~50 people</b><span>supervised across 4 vessels on shift rosters</span></li>
+      <li><b>EN · PT</b><span>fluent English (C1), native Portuguese, basic Spanish</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= LENS ================= -->
+<div class="lens" id="lens">
+  <div class="wrap">
+    <div>
+      <p class="mono">Read this page your way</p>
+      <h2>What are you hiring for?</h2>
+      <div class="lens-pick" role="group" aria-label="Choose the kind of role to highlight">
+        <button type="button" data-set="all" aria-pressed="true">The whole picture <span>All</span></button>
+        <button type="button" data-set="support" aria-pressed="false">IT and application support <span>Support</span></button>
+        <button type="button" data-set="build" aria-pressed="false">Software development <span>Build</span></button>
+        <button type="button" data-set="ops" aria-pressed="false">Operations and coordination <span>Lead</span></button>
+      </div>
+    </div>
+    <div>
+      <div class="pitch" aria-live="polite">
+        <p data-for="all">Twelve-plus years across <mark>IT support</mark>, <mark>port operations</mark> and <mark>software</mark>. The setting kept changing and the job never did: find out what is wrong, fix it, write it down, and leave the system calmer than I found it.</p>
+        <p data-for="support" hidden>Start with the service desk. A year on <mark>Microsoft OEM and partner support</mark> in Dublin, via Arvato Bertelsmann: ServiceNow tickets, SCCM and Active Directory builds, and 30+ knowledge-base articles. Then the IT of a <mark>500-bed hospital</mark> that never closes. I write things down so the next person fixes it faster.</p>
+        <p data-for="build" hidden>Start with the code. Since February 2026 I've worked as a <mark>freelance developer</mark> on a client web application, and I ship my own: FastAPI and React apps with real authentication, automated tests and <mark>live deployments</mark> you can open further down this page.</p>
+        <p data-for="ops" hidden>Start with the ports. <mark>Seven years</mark> supervising tugboat operations for SAAM Towage in Recife and Santos: around 50 people on 4 vessels, shift rosters, monthly budgets, safety procedures, and the daily report that went to the directors.</p>
+      </div>
+      <p class="pitch-foot">Pick a role and the rest of the page puts the matching projects, jobs and tools forward.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= WORK ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">01 · Projects</p><h2>Software you can open and use right now.</h2></div>
+      <p class="note">Each one started with a real problem: a worried pet owner, a press brake operator, a property office. Three are deployed. All the code is on GitHub.</p>
+    </div>
+
+    <div class="work-grid">
+      <article class="proj wide" data-lane="build support">
+        <div class="shot">
+          <div class="bar"><i></i><i></i><i></i><span>petadvice.vercel.app</span></div>
+          <img src="assets/shots/petadvice.png" width="1280" height="800" alt="PETAdvice home page with a Start a quick check button and an example check for a cat.">
+        </div>
+        <div class="body">
+          <p class="mono"><span class="live">Live beta</span><span>Full stack · PWA</span></p>
+          <h3>PETAdvice</h3>
+          <p>An installable app that helps dog and cat owners decide what to do next when something seems wrong. It asks branching questions and gives an urgency level in English, Portuguese or Spanish. It is educational guidance, and its clinical content is still awaiting veterinary review.</p>
+          <p class="point">The triage engine can raise urgency but never lower it. Passwords use Argon2id, sessions are revocable, and guest checks expire and can be deleted.</p>
+          <ul class="tags"><li>FastAPI</li><li>SQLModel</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Redis</li><li>pytest</li></ul>
+          <div class="links">
+            <a class="tl" href="https://petadvice.vercel.app" target="_blank" rel="noopener">Open the app <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+            <a class="tl" href="https://github.com/marcosjfp/petadvice" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj" data-lane="build ops">
+        <div class="shot">
+          <div class="phones">
+            <img src="assets/shots/part.png" width="780" height="1688" alt="Bend Planner profile editor on a phone.">
+            <img src="assets/shots/bends.png" width="780" height="1688" alt="Bend Planner simulating a bend step on the punch and die.">
+            <img src="assets/shots/cut.png" width="780" height="1688" alt="Bend Planner nesting blanks onto a stock sheet.">
+          </div>
+        </div>
+        <div class="body">
+          <p class="mono"><span class="live">Live</span><span>Mobile first · offline</span></p>
+          <h3>Bend Planner</h3>
+          <p>Press brake planning on a phone, for sheet-metal shops. Draw a part's cross-section and it works out the flat blank, the die, the force needed and whether the machine can do it, then animates the bending order and nests the blanks onto stock sheets.</p>
+          <p class="point">Built to catch expensive mistakes before the metal is cut, not at the machine.</p>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Vite</li><li>PWA</li></ul>
+          <div class="links">
+            <a class="tl" href="https://bend-planner.netlify.app" target="_blank" rel="noopener">Open the app <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+            <a class="tl" href="https://github.com/marcosjfp/bend-d-metal" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj" data-lane="build support">
+        <div class="shot">
+          <div class="diagram" role="img" aria-label="Architecture of mock-store: a React client calls a FastAPI service, which uses PostgreSQL, Redis and RabbitMQ, with a worker consuming order events.">
+            <svg viewBox="0 0 420 250" aria-hidden="true">
+              <path class="wire" d="M92 125H150"/><path class="wire" d="M250 125H290V52H318"/><path class="wire" d="M250 125H318"/><path class="wire" d="M250 125H290V198H318"/>
+              <path class="pulse" pathLength="1" d="M92 125H150"/><path class="pulse b" pathLength="1" d="M250 125H290V52H318"/><path class="pulse" pathLength="1" d="M250 125H318"/><path class="pulse c" pathLength="1" d="M250 125H290V198H318"/>
+              <rect class="box" x="12" y="100" width="80" height="50" rx="8"/><text x="52" y="122">React</text><text class="s" x="52" y="137">CLIENT</text>
+              <rect class="box hot" x="150" y="88" width="100" height="74" rx="8"/><text x="200" y="118">FastAPI</text><text class="s" x="200" y="133">JWT · RBAC</text><text class="s" x="200" y="146">TENANT CHECK</text>
+              <rect class="box" x="318" y="30" width="92" height="44" rx="8"/><text x="364" y="50">PostgreSQL</text><text class="s" x="364" y="63">DATA</text>
+              <rect class="box" x="318" y="103" width="92" height="44" rx="8"/><text x="364" y="123">Redis</text><text class="s" x="364" y="136">CACHE · SESSIONS</text>
+              <rect class="box" x="318" y="176" width="92" height="44" rx="8"/><text x="364" y="196">RabbitMQ</text><text class="s" x="364" y="209">ORDER EVENTS</text>
+            </svg>
+          </div>
+        </div>
+        <div class="body">
+          <p class="mono"><span>Back end · API</span></p>
+          <h3>mock-store</h3>
+          <p>A multi-tenant inventory and order API for a computer parts store. Each tenant's data is isolated, three roles (owner, manager, staff) control who can change what, and new orders publish events to a queue for a background worker.</p>
+          <p class="point">The whole stack starts with one Docker Compose command, with migrations, seed data and tests on both sides.</p>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>SQLAlchemy 2.0</li><li>PostgreSQL</li><li>Redis</li><li>RabbitMQ</li><li>Docker</li></ul>
+          <div class="links">
+            <a class="tl" href="https://github.com/marcosjfp/mock-store" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj" data-lane="build support">
+        <div class="shot">
+          <div class="bar"><i></i><i></i><i></i><span>propadmin-lac.vercel.app</span></div>
+          <img src="assets/shots/propadmin.png" width="1280" height="800" alt="PropAdmin sign-in screen, in Portuguese.">
+        </div>
+        <div class="body">
+          <p class="mono"><span class="live">Live</span><span>Full stack · security</span></p>
+          <h3>PropAdmin</h3>
+          <p>Property administration for a Brazilian market: agents submit listings, administrators approve them, assign agents and manage commissions. Records are archived, never deleted, so the financial history stays intact.</p>
+          <p class="point">Where I practised security properly: CSRF origin checks, brute-force lockout, CSP headers, parameterised queries and timing-safe login.</p>
+          <ul class="tags"><li>React</li><li>tRPC</li><li>Express</li><li>Drizzle</li><li>PostgreSQL</li></ul>
+          <div class="links">
+            <a class="tl" href="https://propadmin-lac.vercel.app/login" target="_blank" rel="noopener">Open the app <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+            <a class="tl" href="https://github.com/marcosjfp/propadmin" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj" data-lane="build ops">
+        <div class="shot">
+          <div class="bar"><i></i><i></i><i></i><span>cutwise · runs offline</span></div>
+          <img src="assets/shots/cutwise.png" width="1280" height="800" alt="Cutwise sheet cutting planner with machine, material and cutting plan panels.">
+        </div>
+        <div class="body">
+          <p class="mono"><span>No dependencies · offline</span></p>
+          <h3>Cutwise</h3>
+          <p>A cut planner for the factory floor: enter the sheets you have and the pieces you need, and it lays out straight cuts that waste the least metal. It knows the limits of a real hydraulic shear, and runs from four plain files with no account, build step or server.</p>
+          <p class="point">The optimiser runs in a Web Worker, so the page stays responsive while it calculates.</p>
+          <ul class="tags"><li>JavaScript</li><li>Web Workers</li><li>HTML</li><li>CSS</li></ul>
+          <div class="links">
+            <a class="tl" href="https://github.com/marcosjfp/cut-n-pieces" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="more">
+      <article class="proj" data-lane="build">
+        <div class="body">
+          <p class="mono">Full stack</p>
+          <h3>Budgetfy</h3>
+          <p>Shared budgets for friends and family: group expenses, who owes whom with the fewest payments, a currency per group, search and CSV export.</p>
+          <ul class="tags"><li>React 19</li><li>Express</li><li>PostgreSQL</li><li>Recharts</li></ul>
+          <div class="links"><a class="tl" href="https://github.com/marcosjfp/budgetfy" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj" data-lane="build">
+        <div class="body">
+          <p class="mono">Team project · BSc</p>
+          <h3>BrainDump</h3>
+          <p>A study planner built with a classmate: task board, calendar, Pomodoro timer, spaced-repetition flashcards and AI study plans, installable on a phone.</p>
+          <ul class="tags"><li>Python</li><li>Flask</li><li>SQLAlchemy</li><li>PWA</li></ul>
+          <div class="links"><a class="tl" href="https://github.com/StudyPlannerJM/Final-project" target="_blank" rel="noopener">Read the code <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 11l6-6M6 5h5v5"/></svg></a></div>
+        </div>
+      </article>
+      <article class="proj" data-lane="build">
+        <div class="body">
+          <p class="mono">Client work · since Feb 2026</p>
+          <h3>Freelance development</h3>
+          <p>I contribute to a client's web application, delivered through a partner agency. The code belongs to the client, so it isn't shown here. Ask me about it when we talk.</p>
+          <ul class="tags"><li>React</li><li>TypeScript</li><li>Vite</li></ul>
+          <div class="links"><a class="tl" href="#contact">Ask about this work <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="xp" id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">02 · Experience</p><h2>Seven jobs, one habit: keep it working.</h2></div>
+      <p class="note">A support desk, a hospital, two ports, a business office, a warehouse and a code editor. Titles and dates are exactly as they appear on my CV.</p>
+    </div>
+
+    <div class="roles">
+      <article class="role" data-lane="build">
+        <time>Feb 2026 to now</time>
+        <div><h3>Freelance Software Developer</h3><p class="org">Self-employed · Remote</p><span class="lane">Build</span></div>
+        <ul>
+          <li>Contributing to a client web application delivered through a partner agency.</li>
+          <li>Building and deploying my own full-stack projects alongside it, with authentication, tests and documentation.</li>
+        </ul>
+      </article>
+
+      <article class="role" data-lane="ops">
+        <time>Mar 2024 to Jan 2026</time>
+        <div><h3>General Operative</h3><p class="org">Components Distributors CD-Ireland · Dublin</p><span class="lane">Operations</span></div>
+        <ul>
+          <li><strong>A deliberate choice:</strong> steady work in Ireland while completing a full-time BSc.</li>
+          <li>Inventory control, stock rotation, picking, packing and dispatch using RF scanners and warehouse management systems.</li>
+          <li>Kept a zero-incident health and safety record.</li>
+        </ul>
+      </article>
+
+      <article class="role" data-lane="ops support">
+        <time>Jan to Mar 2024</time>
+        <div><h3>Social Care Worker</h3><p class="org">Caremark · Dublin</p><span class="lane">Care · compliance</span></div>
+        <ul>
+          <li>Personal care and daily living support for older adults and people with disabilities.</li>
+          <li>Risk assessments and HSE/HIQA-compliant records, manual handling and infection control.</li>
+        </ul>
+      </article>
+
+      <article class="role" data-lane="support">
+        <time>Feb 2022 to Nov 2023</time>
+        <div><h3>IT &amp; Marketing Analyst</h3><p class="org">Pedro Araujo e Cia · São Luís, Brazil</p><span class="lane">Support</span></div>
+        <ul>
+          <li>Supervised the rollout of software and hardware systems, with hands-on user support throughout.</li>
+          <li>Wrote the infrastructure documentation and standard operating procedures.</li>
+          <li>Ran SEO and paid-traffic campaigns, and translated between the IT and marketing sides of the business.</li>
+        </ul>
+      </article>
+
+      <article class="role" data-lane="ops build">
+        <time>Jan 2014 to Jul 2021</time>
+        <div><h3>Operations Supervisor</h3><p class="org">SAAM Towage Brasil S/A · Recife and Santos, Brazil</p><span class="lane">Operations · leadership</span></div>
+        <ul>
+          <li>Directed tugboat operations across two major ports for seven years, supervising <strong>4 vessels and around 50 people</strong> on a shift basis.</li>
+          <li>Owned staffing, scheduling and resource allocation, and reconciled the monthly budget for senior management.</li>
+          <li>Introduced structured safety protocols that reduced workplace incidents, and trained crews on operating and safety procedures.</li>
+          <li>Built Excel workbooks, small Access tools and Python scripts that gave the directors and CEO clearer daily earnings reports.</li>
+          <li>Settled docking disputes with third parties by getting fast, correct information to everyone involved.</li>
+        </ul>
+      </article>
+
+      <article class="role" data-lane="support">
+        <time>Feb 2013 to Jan 2014</time>
+        <div><h3>IT Systems &amp; Support Analyst</h3><p class="org">Djalma Marques Municipal Hospital · São Luís, Brazil</p><span class="lane">Support</span></div>
+        <ul>
+          <li>Kept the IT infrastructure of a <strong>500-bed public hospital</strong> running in a 24/7 environment.</li>
+          <li>Set up remote support so most faults could be fixed without walking the wards, and trained the technical staff to use it.</li>
+          <li>Wrote disaster-recovery procedures and system documentation, and presented cost-benefit analyses to leadership.</li>
+        </ul>
+      </article>
+
+      <article class="role" data-lane="support">
+        <time>Apr 2011 to Apr 2012</time>
+        <div><h3>IT Support Analyst</h3><p class="org">Microsoft Corporation (via Arvato Bertelsmann) · Dublin</p><span class="lane">Support</span></div>
+        <ul>
+          <li>Line 1 OEM and incentive-channel support, working a steady daily volume of ServiceNow tickets.</li>
+          <li>Configured workstations with SCCM and Active Directory, and administered print servers and databases.</li>
+          <li>Wrote <strong>30+ knowledge-base articles</strong> so repeat problems had a written fix.</li>
+        </ul>
+      </article>
+    </div>
+    <p class="earlier"><strong>Earlier:</strong> IT and web support at DETRAN Maranhão (2008 to 2010), and ATM and bank-terminal maintenance in the field for Tecnologia Bancária (2002 to 2003).</p>
+  </div>
+</section>
+
+<!-- ================= TOOLKIT ================= -->
+<section id="toolkit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="mono">03 · Toolkit</p><h2>Tools, with honest levels.</h2></div>
+      <p class="note">Grouped by the job they do. A solid dot is something I use with confidence. A ring is working knowledge, from coursework, personal projects or lighter use on the job.</p>
+    </div>
+
+    <div class="kit">
+      <div data-lane="support">
+        <p class="mono">Support</p><h3>Desk and endpoint</h3>
+        <ul><li>Microsoft 365</li><li>Windows 10/11</li><li>Windows Server</li><li>Active Directory</li><li>Entra ID</li><li>SCCM</li><li>ServiceNow</li><li>Printers and peripherals</li><li>iOS and Android</li><li class="w">Intune / MDM</li><li class="w">Jira and Confluence</li></ul>
+      </div>
+      <div data-lane="support">
+        <p class="mono">Support</p><h3>Networks and systems</h3>
+        <ul><li>TCP/IP</li><li>DNS</li><li>DHCP</li><li>VPN</li><li>Firewall configuration</li><li>Linux</li><li>macOS</li><li>Bash</li><li class="w">PowerShell</li></ul>
+      </div>
+      <div data-lane="build">
+        <p class="mono">Build</p><h3>Languages and frameworks</h3>
+        <ul><li>Python</li><li>FastAPI</li><li>Flask</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>Express</li><li>C# / .NET</li><li>REST API design</li><li>tRPC</li><li>Tailwind</li></ul>
+      </div>
+      <div data-lane="build support">
+        <p class="mono">Build · support</p><h3>Data and delivery</h3>
+        <ul><li>SQL</li><li>PostgreSQL</li><li>MySQL</li><li>SQL Server</li><li>SQLite</li><li>Git and GitHub</li><li>Docker</li><li>Redis</li><li>RabbitMQ</li><li class="w">AWS</li><li class="w">Azure</li></ul>
+      </div>
+      <div data-lane="ops">
+        <p class="mono">Lead</p><h3>Operations and reporting</h3>
+        <ul><li>Shift rostering</li><li>Budget reconciliation</li><li>Safety and compliance</li><li>SOPs</li><li>Disaster-recovery docs</li><li>Knowledge-base writing</li><li>Excel</li><li class="w">Power BI</li><li class="w">Power Automate</li><li class="w">SAP</li></ul>
+      </div>
+      <div class="edu">
+        <p class="mono">Education</p><h3>Formal study</h3>
+        <dl>
+          <div><dt>BSc Computing Science, Level 7 NFQ</dt><dd>Dorset College Dublin · 2023 to 2026</dd></div>
+          <div><dt>CCNA: Switching, Routing, and Wireless Essentials</dt><dd>Cisco Networking Academy course certificate · 2025</dd></div>
+          <div><dt>SEO &amp; Paid Traffic Specialisation</dt><dd>ALURA, São Paulo · 200+ hours · 2022</dd></div>
+          <div><dt>IT Technician Diploma</dt><dd>CET, São Luís · 2009</dd></div>
+        </dl>
+      </div>
+    </div>
+    <p class="key"><span><i></i>Use with confidence</span><span><i class="w"></i>Working knowledge</span></p>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about xp" id="about">
+  <div class="wrap">
+    <div>
+      <p class="mono">04 · About</p>
+      <h2>A 486 DX2 started all of this.</h2>
+      <blockquote>I have been taking computers apart, and mostly getting them back together, since 1994. Everything since has been a version of the same curiosity, with more people depending on the result.</blockquote>
+      <p>I took a warehouse job on purpose while I studied full time, and I'd make the same call again. Off the clock you'll find me on a Linux machine I have probably just broken, reading history, or on a bike. I did Karate and Kung Fu for more than ten years, which taught me to stay calm when things go sideways.</p>
+    </div>
+    <ul class="notes">
+      <li><b>1994</b><span>First computer, a 486 DX2. Every version of Windows since DOS and 3.1.</span></li>
+      <li><b>2002</b><span>Linux user since. Today it's CachyOS, with disk encryption I set up myself.</span></li>
+      <li><b>28 years</b><span>Driving, on a full clean Irish licence, without a single penalty point.</span></li>
+      <li><b>3 languages</b><span>Portuguese at home, English at work, enough Spanish to get by.</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= CONTACT ================= -->
+<footer class="contact" id="contact">
+  <div class="wrap">
+    <p class="mono">05 · Contact</p>
+    <h2>Got a system that needs to <em>stay up?</em></h2>
+    <a class="mail" href="mailto:marcosjfpinheiro@gmail.com">marcosjfpinheiro@gmail.com</a>
+    <dl class="terms">
+      <div><dt>Based in</dt><dd>Carlow, Ireland. Eligible to work in Ireland without sponsorship.</dd></div>
+      <div><dt>Where I can work</dt><dd>On site around Carlow, Kilkenny, Laois and Kildare. Remote. Hybrid in Dublin up to three days a week.</dd></div>
+      <div><dt>Availability</dt><dd>About one week's notice. Open to shifts, on-call rotas and travel.</dd></div>
+      <div><dt>Elsewhere</dt><dd><a href="https://linkedin.com/in/marcos-fernandes80" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/marcosjfp" target="_blank" rel="noopener">GitHub</a></dd></div>
+    </dl>
+    <p class="foot"><span>© 2026 Marcos Fernandes</span><span>Hand-built in HTML and CSS. No trackers, no cookies.</span></p>
+  </div>
+</footer>
+
+<div class="lens-chip" role="status"><span id="chip-text">Highlighting: Support</span><button type="button" data-set="all">Show all</button></div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var names = { support: 'IT support', build: 'Software', ops: 'Operations' };
+
+  function setLens(v) {
+    root.setAttribute('data-lens', v);
+    document.querySelectorAll('.lens-pick button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.set === v));
+    });
+    document.querySelectorAll('.pitch p').forEach(function (p) { p.hidden = p.dataset.for !== v; });
+    if (names[v]) document.getElementById('chip-text').textContent = 'Highlighting: ' + names[v];
+    try { history.replaceState(null, '', v === 'all' ? location.pathname : '?for=' + v); } catch (e) {}
+  }
+  document.querySelectorAll('[data-set]').forEach(function (b) {
+    b.addEventListener('click', function () { setLens(b.dataset.set); });
+  });
+  // A link such as ?for=support opens the page already tuned for that role.
+  var q = new URLSearchParams(location.search).get('for');
+  if (q && names[q]) setLens(q);
+
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = root.getAttribute('data-theme')
+      ? root.getAttribute('data-theme') === 'dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = dark ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('mf-theme', next); } catch (e) {}
+  });
+
+  var nav = document.querySelector('.nav');
+  addEventListener('scroll', function () { nav.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+})();
+</script>
+</body>
+</html>
